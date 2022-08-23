@@ -8,5 +8,18 @@ pipeline {
              checkout scm
             }
         }
+        
+         stage('install') {
+            steps {
+     sh """
+     npm ci
+     npm install -g @lhci/cli
+     """
+            
+            
+            }
+        }
+        
+        
     }
 }
