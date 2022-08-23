@@ -1,2 +1,5 @@
-
-///TEST
+node('master') {
+    stage 'Checkout'
+        cleanWs()
+      
+    }
