@@ -1,10 +1,12 @@
-node() {
-  stage('Echo') {
-    echo 'FOO2'
-  }
-  stage('Buildtools checkout') {
-    dir ('jenkins-jobs') {
-      git changelog: false, poll: false, url: 'git@github.com:giku87/test_lighouse.git'
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'make' 
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+            }
+        }
     }
-  }
 }
