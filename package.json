@@ -1,0 +1,20 @@
+{
+  "name": "lighthouseci-puppeteer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "audit": "npx lhci autorun"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@lhci/cli": "^0.7.2",
+    "dotenv": "^9.0.2",
+    "puppeteer": "^9.1.1"
+  },
+  "dependencies": {
+    "lp": "^0.0.2"
+  }
+}
