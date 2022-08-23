@@ -1,4 +1,4 @@
-node('any') {
+node() {
   stage('Echo') {
     echo 'FOO2'
   }
