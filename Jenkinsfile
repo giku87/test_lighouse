@@ -1,4 +1,4 @@
-node('fc21&&x86_64') {
+node('master') {
   stage('Echo') {
     echo 'FOO2'
   }
