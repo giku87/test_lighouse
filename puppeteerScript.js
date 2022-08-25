@@ -18,11 +18,11 @@ const selector = {
 }
 
 async function doLogin(page) {
-    const loginUrl = 'http://localhost/index.php?route=account/login'
+    const loginUrl = 'http://tutorialsninja.com/demo/index.php?route=account/login'
     await page.waitForTimeout(2000)
     await page.goto(loginUrl);
-    await page.type(selector.id('input-email'), 'me1@mail.md');
-    await page.type(selector.id('input-password'), 'Test1234');
+    await page.type(selector.id('input-email'), 'test1user@test.com');
+    await page.type(selector.id('input-password'), 'Mypassword@08');
     console.log(`Entered user credentials`)
     await page.click(selector.type('input', 'submit'));
     console.log(`Login is successful`)
