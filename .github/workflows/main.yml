@@ -13,11 +13,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: npm puppeteer
-        run: |
-          npm install --D puppeteer
       - name: run Lighthouse CI
         run: |
+          npm install --D puppeteer
           npm install -g @lhci/cli@0.3.x
           lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
           env:
