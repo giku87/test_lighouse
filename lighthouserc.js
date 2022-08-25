@@ -22,12 +22,20 @@ module.exports = {
 
         },
 
-upload: {
-            target: 'lhci',
-            token: '7921f65d-8ecc-4faf-8c2d-e7917a4de286',
-            ignoreDuplicateBuildFailure: true,
-            serverBaseUrl:'http://localhost:9001/'
-        },    
+// upload: {
+//             target: 'lhci',
+//             token: '7921f65d-8ecc-4faf-8c2d-e7917a4de286',
+//             ignoreDuplicateBuildFailure: true,
+//             serverBaseUrl:'http://localhost:9001/'
+//         },    
+        
+             upload: {
+            target: 'filesystem',
+            outputDir: './lhci_reports',
+            reportFilenamePattern: '%%PATHNAME%%-%%DATETIME%%-report.%%EXTENSION%%'
+            // token: '',
+            // serverBaseUrl: ''
+        },
 
         assert: {
 
