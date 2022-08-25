@@ -15,7 +15,7 @@ jobs:
           npm install
       - name: npm puppeteer
         run: |
-          npm i puppeteer
+          npm install --D puppeteer
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.3.x
