@@ -17,7 +17,7 @@ module.exports = {
                 "throttlingMethod": "devtools"
             },
 
-            url: ['http://localhost/index.php?route=account/account']
+            url: ['http://tutorialsninja.com/demo/index.php?route=account/account']
             //, 'http://tutorialsninja.com/demo/index.php?route=product/category&path=20', 'http://tutorialsninja.com/demo/index.php?route=checkout/cart']
 
         },
