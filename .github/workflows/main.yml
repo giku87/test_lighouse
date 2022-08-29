@@ -13,11 +13,9 @@ jobs:
       - name: npm install
         run: |
           pwd
-          ls
           npm install
           npm ci
-          npm test
           npm install -g @lhci/cli@0.3.x
           npx lhci autorun
-          ls
+          pwd
   
