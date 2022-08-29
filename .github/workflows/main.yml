@@ -16,4 +16,5 @@ jobs:
           npm ci
           npm test
           npm install -g @lhci/cli@0.3.x
+          npx lhci autorun
  
