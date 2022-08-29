@@ -47,23 +47,25 @@ module.exports = {
             reportFilenamePattern: '%%PATHNAME%%-%%DATETIME%%-report.%%EXTENSION%%'
             // token: '',
             // serverBaseUrl: ''
-        },
+        }
+        
+//         ,
 
-        assert: {
+//         assert: {
 
-            "assertions": {
+//             "assertions": {
 
-                "categories:performance": ["error", {"minScore": 0.1}],
+//                 "categories:performance": ["error", {"minScore": 0.1}],
 
-                "categories:accessibility": ["error", {"minScore": 0.1}],
+//                 "categories:accessibility": ["error", {"minScore": 0.1}],
 
-                "categories:best-practices": ["error", {"minScore": 0.1}],
+//                 "categories:best-practices": ["error", {"minScore": 0.1}],
 
-                "categories:seo": ["error", {"minScore": 0.1}]
+//                 "categories:seo": ["error", {"minScore": 0.1}]
 
-            }
+//             }
 
-        },
+//         },
 
     },
 
