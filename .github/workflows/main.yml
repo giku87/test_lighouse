@@ -36,5 +36,5 @@ jobs:
                 🚦 Running Lighthouse audit...
       - name: Deploy
         if: success()
-        run: aws s3 sync /home/runner/work/test_lighouse/test_lighouse/lhci_reports s3://frunza
+        run: aws s3 sync /home/runner/work/test_lighouse/test_lighouse/lhci_reports/*.html s3://frunza
 
