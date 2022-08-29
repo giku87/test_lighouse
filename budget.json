@@ -8,7 +8,7 @@
 			},
 			{
 				"metric": "first-contentful-paint",
-				"budget": 1800
+				"budget": 1
 			},
 			{
 				"metric": "cumulative-layout-shift",
