@@ -18,4 +18,13 @@ jobs:
           npm install -g @lhci/cli@0.3.x
           npx lhci autorun
           pwd
-  
+      - name: Add comment to PR
+        id: loading_lighthouse_comment_to_pr
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            number: ${{ github.event.pull_request.number }}
+            header: lighthouse
+            message: |
+                🚦 Running Lighthouse audit...
+
