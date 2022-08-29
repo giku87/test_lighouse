@@ -18,7 +18,7 @@ jobs:
         run: |
           npm ci
           npm run build --if-present
-          npm test
+          sudo npm install puppeteer --unsafe-perm=true
         env:
           CI: true 
       - name: run Lighthouse CI
