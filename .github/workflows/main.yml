@@ -12,6 +12,8 @@ jobs:
           node-version: 12.x
       - name: npm install
         run: |
+          pwd
+          ls
           npm install
           npm ci
           npm test
