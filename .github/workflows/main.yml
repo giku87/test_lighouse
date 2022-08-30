@@ -24,6 +24,10 @@ jobs:
           npm install -g @lhci/cli@0.3.x
           npx lhci autorun
         continue-on-error: true 
+      - name: Deploy1
+        if: success()
+        env:
+         test: "faileddd"
       - uses: mshick/add-pr-comment@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
