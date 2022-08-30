@@ -31,15 +31,6 @@ jobs:
           message: |
             **Hello MASTER**
           allow-repeats: true 
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v9
-        with:
-          urls: |
-            https://example.com/
-            https://example.com/blog
-          budgetPath: ./budget.json # test performance budgets
-          uploadArtifacts: true # save results as an action artifacts
-          temporaryPublicStorage: false # upload lighthouse report to the temporary
       - name: Deploy
         if: success()
         run: aws s3 cp /home/runner/work/test_lighouse/test_lighouse/lhci_reports/*.html s3://frunza
