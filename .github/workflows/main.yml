@@ -25,6 +25,7 @@ jobs:
           npx lhci autorun
         continue-on-error: true 
       - uses: mshick/add-pr-comment@v1
+        if: success() || failure()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -32,6 +33,6 @@ jobs:
             **Hello MASTER**
           allow-repeats: true 
       - name: Deploy
-        if: success()
+        if: success() || failure()
         run: aws s3 cp /home/runner/work/test_lighouse/test_lighouse/lhci_reports/*.html s3://frunza
 
