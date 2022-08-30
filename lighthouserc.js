@@ -49,9 +49,13 @@ module.exports = {
             // serverBaseUrl: ''
         }
         
-//         ,
+       ,
 
-//         assert: {
+      assert: {
+          
+             
+      "budgetsFile": "budget.json"
+    
 
 //             "assertions": {
 
@@ -65,7 +69,7 @@ module.exports = {
 
 //             }
 
-//         },
+      },
 
     },
 
