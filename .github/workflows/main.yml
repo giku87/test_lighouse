@@ -24,16 +24,13 @@ jobs:
           npm install -g @lhci/cli@0.3.x
           npx lhci autorun
           pwd
-      - name: Add comment to PR
-        id: loading_lighthouse_comment_to_pr
-        uses: marocchino/sticky-pull-request-comment@v2
+      - uses: mshick/add-pr-comment@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            number: ${{ github.event.number }}
-            append: true 
-            header: lighthouse
-            message: |
-                🚦 Running Lighthouse audit...
+          message: |
+            **Hello MASTER**
+          allow-repeats: true 
       - name: Deploy
         if: success()
         run: aws s3 cp /home/runner/work/test_lighouse/test_lighouse/lhci_reports/*.html s3://frunza
