@@ -14,19 +14,20 @@ module.exports = {
                 // Wait up to 60s for the page to load
                 "maxWaitForLoad": 60000,
                 // Use applied throttling instead of simulated throttling
-                "throttlingMethod": "devtools",
+                "throttlingMethod": "devtools"
+               // ,
                 
-                    "budgets":[
-                    {
-                      "path":"/*",
-                      "resourceSizes":[
-                         {
-                            "resourceType":"script",
-                            "budget":200
-                         }
-                      ]
-                    }
-                    ]       ,         
+                 //   "budgets":[
+                   // {
+                     // "path":"/*",
+                      //"resourceSizes":[
+                        // {
+                          //  "resourceType":"script",
+                            //"budget":200
+                         //}
+                     // ]
+                    //}
+                    //]       ,         
             },
 
             url: ['http://tutorialsninja.com/demo/index.php?route=account/account']
@@ -54,7 +55,7 @@ module.exports = {
       assert: {
           
              
-      "budgetsFile": "budget.json"
+     "budgetsFile": "budget.json"
     
 
 //             "assertions": {
