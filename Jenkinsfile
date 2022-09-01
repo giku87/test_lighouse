@@ -24,18 +24,7 @@ pipeline {
             }
         }
         
-                    post {
-    always {
-      publishHTML (target: [
-        allowMissing: false,
-        alwaysLinkToLastBuild: false,
-        keepAll: true,
-        reportDir: '.',
-        reportFiles: '*.html',
-        reportName: "Lighthouse"
-      ])
-    }
-  }
+
     }
     
 
