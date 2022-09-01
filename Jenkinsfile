@@ -22,6 +22,22 @@ pipeline {
      """
             
             }
+             
+             
+             post {
+    always {
+      publishHTML (target: [
+        allowMissing: false,
+        alwaysLinkToLastBuild: false,
+        keepAll: true,
+        reportDir: '.',
+        reportFiles: 'lighthouse-report.html',
+        reportName: "Lighthouse"
+      ])
+    }
+  }
+             
+             
         }
         
 
