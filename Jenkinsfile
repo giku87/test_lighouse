@@ -13,9 +13,11 @@ pipeline {
             steps {
                 
               //  println scm.branches[0].name
+                println BUILD_NUMBER
      sh """ export LHCI_BUILD_CONTEXT__CURRENT_BRANCH='*/lighthouse' """
      sh """
      env
+     
      git rev-parse --abbrev-ref HEAD
       npm install -g @lhci/cli
        lhci autorun
