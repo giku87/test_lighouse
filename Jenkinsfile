@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-     tools {nodejs "nodejs"}
+    tools {nodejs "nodejs"}
     stages {
         stage('Build') {
             steps {
@@ -17,16 +17,17 @@ pipeline {
      sh """
      env
      git rev-parse --abbrev-ref HEAD
-//      npm ci
       npm install -g @lhci/cli
        lhci autorun
-//       env
      """
-            
             
             }
         }
-        post {
+        
+        
+    }
+    
+            post {
     always {
       publishHTML (target: [
         allowMissing: false,
@@ -38,6 +39,5 @@ pipeline {
       ])
     }
   }
-        
-    }
+    
 }
