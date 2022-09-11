@@ -1,7 +1,8 @@
 pipeline {
     agent any
-
+    
     tools {nodejs "nodejs"}
+    
     stages {
         stage('Build') {
             steps {
@@ -9,40 +10,37 @@ pipeline {
             }
         }
         
-         stage('install') {
+         stage('Install Lighouse') {
+                steps {
+                     sh """ export LHCI_BUILD_CONTEXT__CURRENT_BRANCH='*/lighthouse' """
+                     sh """
+                     git rev-parse --abbrev-ref HEAD
+                      npm install -g @lhci/cli
+                     """
+                }
+        stage('Run Lighouse') {
             steps {
-                
-              //  println scm.branches[0].name
-                println BUILD_NUMBER
-     sh """ export LHCI_BUILD_CONTEXT__CURRENT_BRANCH='*/lighthouse' """
-     sh """
-     env
-     
-     git rev-parse --abbrev-ref HEAD
-      npm install -g @lhci/cli
-       lhci autorun
-     """
-            
+                 sh """
+                  lhci autorun
+                   """
             }
              
              
-             post {
-    always {
-      publishHTML (target: [
-        allowMissing: false,
-        alwaysLinkToLastBuild: false,
-        keepAll: true,
-        reportDir: '.',
-        reportFiles: '*.html',
-        reportName: "Lighthouse"
-      ])
-    }
-  }
+               post {
+                always {
+                  publishHTML (target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: '.',
+                    reportFiles: '*.html',
+                    reportName: "Lighthouse"
+                  ])
+                }
+              }
              
              
         }
-        
-
     }
     
 
