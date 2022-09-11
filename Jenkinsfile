@@ -18,6 +18,7 @@ pipeline {
                       npm install -g @lhci/cli
                      """
                 }
+         }
         stage('Run Lighouse') {
             steps {
                  sh """
