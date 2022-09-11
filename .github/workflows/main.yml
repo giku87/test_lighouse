@@ -18,9 +18,15 @@ jobs:
           node-version: 12.x
       - name: npm install
         run: |
-          pwd
           npm install
           npm ci
+      - name: lighouse install
+        run: |
+          npm install -g @lhci/cli@0.3.x
+          npx lhci autorun
+#         continue-on-error: true 
+      - name: lighouse run
+        run: |
           npm install -g @lhci/cli@0.3.x
           npx lhci autorun
 #         continue-on-error: true 
@@ -32,7 +38,7 @@ jobs:
           message: |
             **Hello Endava Testing Week 2022**
           allow-repeats: true 
-      - name: Deploy
+      - name: Submit report to S3
         if: success() || failure()
         run: aws s3 cp /home/runner/work/test_lighouse/test_lighouse/lhci_reports/*.html s3://frunza
 
