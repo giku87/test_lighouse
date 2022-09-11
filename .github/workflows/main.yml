@@ -40,4 +40,6 @@ jobs:
           aws-region: eu-central-1
       - name: Submit report to S3
         if: success() || failure()
-        run: aws s3 cp /home/runner/work/test_lighouse/test_lighouse/lhci_reports/*.html s3://frunza
+        run: |
+          aws s3 ls
+          aws s3 cp /home/runner/work/test_lighouse/test_lighouse/lhci_reports/*.html s3://frunza
