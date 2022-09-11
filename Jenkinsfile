@@ -4,6 +4,14 @@ pipeline {
     tools {nodejs "nodejs"}
     
     stages {
+        
+        stage('Init') {
+            steps {
+             sh """ rm -rf lhci_reports"""
+             println ("ddd"+$BUILD_NUMBER)
+            }
+        }
+        
         stage('Build') {
             steps {
              checkout scm
