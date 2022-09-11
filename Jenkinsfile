@@ -8,7 +8,7 @@ pipeline {
         stage('Init') {
             steps {
              sh """ rm -rf lhci_reports"""
-             println ("ddd"+$BUILD_NUMBER)
+             sh 'echo "I can access $BUILD_NUMBER in shell command as well."'
             }
         }
         
