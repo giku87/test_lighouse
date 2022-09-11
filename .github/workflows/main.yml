@@ -5,12 +5,6 @@ jobs:
     name: Lighthouse CI
     runs-on: ubuntu-latest
     steps:
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-central-1
       - uses: actions/checkout@v1
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
@@ -38,7 +32,12 @@ jobs:
           message: |
             **Hello Endava Testing Week 2022**
           allow-repeats: true 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
       - name: Submit report to S3
         if: success() || failure()
         run: aws s3 cp /home/runner/work/test_lighouse/test_lighouse/lhci_reports/*.html s3://frunza
-
