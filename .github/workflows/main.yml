@@ -30,7 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           message: |
-            **Hello MASTER**
+            **Hello Endava Testing Week 2022**
           allow-repeats: true 
       - name: Deploy
         if: success() || failure()
