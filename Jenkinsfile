@@ -42,7 +42,7 @@ pipeline {
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
                     reportDir: '.',
-                    reportFiles: '*.html',
+                    reportFiles: 'lhci_reports/*.html',
                     reportName: "Lighthouse"
                   ])
                 }
